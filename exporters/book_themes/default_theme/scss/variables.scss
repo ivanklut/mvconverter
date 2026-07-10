@@ -1,0 +1,61 @@
+
+// Цвета
+// =====
+// Палитра
+// -------
+$almost-white: #fdfcfb;
+$grey-l: #eeeeea;
+$dark: #3a3a3a;
+$brown: #6f6448;
+
+// bg - background, br - border
+$inclusion-bg: $almost-white;
+$note-bg: #e6f0f0;
+$note-br: #b3d5ec;
+$advise-bg: #dbebd8;
+$advise-br: #bdf4aa;
+$warning-bg: #fbf3db;
+$warning-br: #f4e2aa;
+$danger-bg: #fbe0db;
+$danger-br: #f4b6aa;
+
+
+
+$code-bg:#f0ebe3;
+$code-br: #dfd7ca;
+$pre-bg:#f0ebe3;
+$pre-br: #dfd7ca;
+
+$table-bg: $almost-white;
+$table-br: $grey-l;
+$table-hover: $advise-bg;
+$table-attention: $warning-bg;
+
+// Использование палитры
+$c-b-body: $grey-l;					// Основной цвет фона
+$c-f-body: $dark;					// Основной цвет шрифта
+//$c-f-body-a: $brown;				// Основной цвет ссылки
+//$c-f-body-ahov: $accol_dark;// darken($accol, 8%);		// Основной цвет ссылки при наведении
+$c-f-heading: $brown;
+
+font-face {
+	font-family: "PT-Serif";
+	//font-style: normal;
+	//font-weight: 400;
+	src: local("PT-Serif"), url("/font/PT-Serif/pt-serif_regular.woff2");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+// Семейства шрифтов
+// -----------------
+$f-fam-body: 'PT Serif', serif;//'Merriweather', serif; //, Verdana, Geneva, sans-serif;				// Текст
+$f-fam-heading: 'Merriweather', serif;//'Roboto Slab', serif;// 'Noto Sans', sans-serif;	// Заголовки
+$f-fam-btn: Rubik-medium, Verdana, Geneva, sans-serif;				// Кнопки
+$f-fam-nav: Rubik-medium, Verdana, Geneva, sans-serif;				// Меню 
+$f-fam-quote: 'Noto Serif', serif;//'Literata', serif; //Bookman Old Style, serif;												// Цитаты
+$f-fam-mono: 'Cousine', monospace;
+
+$round: .3rem;

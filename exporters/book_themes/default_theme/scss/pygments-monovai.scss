@@ -1,0 +1,88 @@
+/* =====================================================================
+   АВТОНОМНАЯ SCSS-ТЕМА PYGMENTS (MONOKAI) С ИСКЛЮЧЕНИЕМ КAСТOМНЫХ СТИЛEЙ
+   ===================================================================== */
+
+// Глобальные настройки тега pre
+pre {
+	line-height: 125%;
+}
+
+// Номера строк (linenos)
+td.linenos, span.linenos {
+	.normal {
+		color: inherit;
+		background-color: transparent;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	.special {
+		color: #000000;
+		background-color: #ffffc0;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	&.special {
+		color: #000000;
+		background-color: #ffffc0;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+// ГЛАВНЫЙ СВЯЗЫВАЮЩИЙ БЛОК ДЛЯ СИНТАКСИСА С ИСКЛЮЧЕНИЕМ
+// Здесь мы перечисляем все классы Марквана и UNO, которые нужно игнорировать.
+// :not(.uno) поймает кастомные классы конфигов, а :not([class*="uno"]) застрахует от language-uno и unom/unos.
+.code:not(.markvan-content):not([class*="markvan"]):not(.uno):not([class*="uno"]) {
+	background: #272822;
+	color: #F8F8F2;
+
+	// Подсветка текущей строки
+	.hll { background-color: #49483e; }
+
+	// --- 1. КОММЕНТАРИИ (Comments) ---
+	.c, .ch, .cm, .cp, .cpf, .c1, .cs { color: #959077; }
+
+	// --- 2. ОШИБКИ И СИСТЕМНЫЕ СИМВОЛЫ ---
+	.err { color: #ED007E; background-color: #1E0010; }
+	.esc, .g, .x, .w { color: #F8F8F2; }
+
+	// --- 3. КЛЮЧЕВЫЕ СЛОВА (Keywords) ---
+	.k, .kc, .kd, .kp, .kr, .kt { color: #66D9EF; }
+	.kn { color: #FF4689; } // Keyword.Namespace
+
+	// --- 4. ОПЕРАТОРЫ И ЗНАКИ ПРЕПИНАНИЯ ---
+	.o, .ow { color: #FF4689; }
+	.p, .pm { color: #F8F8F2; }
+
+	// --- 5. ЧИСЛА И ЛИТЕРАЛЫ (Numbers & Literals) ---
+	.l, .m, .mb, .mf, .mh, .mi, .mo, .il { color: #AE81FF; }
+
+	// --- 6. СТРОКИ (Strings) ---
+	.s, .ld, .sa, .sb, .sc, .dl, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss { color: #E6DB74; }
+	.se { color: #AE81FF; } // String.Escape
+
+	// --- 7. ИМЕНА И ОБЪЕКТЫ (Names, Functions, Variables) ---
+	.n, .nb, .ni, .nl, .nn, .py, .nv, .bp, .vc, .vg, .vi, .vm { color: #F8F8F2; }
+	.na, .nc, .nd, .ne, .nf, .nx, .fm { color: #A6E22E; }
+	.no { color: #66D9EF; } // Name.Constant
+	.nt { color: #FF4689; } // Name.Tag
+
+	// --- 8. ГЕНЕРИРУЕМЫЙ СИНТАКСИС (Generic) ---
+	.gd { color: #FF4689; } // Generic.Deleted
+	.gi { color: #A6E22E; } // Generic.Inserted
+	.go { color: #66D9EF; } // Generic.Output
+	.gp { color: #FF4689; font-weight: bold; } // Generic.Prompt
+	.gs { font-weight: bold; } // Generic.Strong
+	.gu { color: #959077; } // Generic.Subheading
+	.gt { color: #F8F8F2; } // Generic.Traceback
+	
+	.ge { 
+		font-style: italic; 
+	}
+	.ges { 
+		font-weight: bold; 
+		font-style: italic; 
+	}
+}

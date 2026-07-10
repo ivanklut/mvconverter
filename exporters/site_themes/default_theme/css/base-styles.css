@@ -1,0 +1,201 @@
+font-face {
+  font-family: "PT-Serif";
+  src: local("PT-Serif"), url("theme/font/PT-Serif/pt-serif_regular.woff2");
+}
+font-face {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+	src: url('theme/styles/font/Merriweather-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
+
+html {
+  font-size: calc(16px + (30 - 16) * (100vw - 320px)/(3840 - 320));
+}
+
+body {
+  margin: 0;
+  padding: .5rem 3vw;
+  background-color: #eeeeea;
+  color: #3a3a3a;
+  font-family: "PT Serif", serif;
+  -moz-tab-size: 3;
+    -o-tab-size: 3;
+       tab-size: 3;
+}
+
+body main {
+  width: clamp(200px, 46rem, 94vw);
+  margin: 0 auto 0 auto;
+}
+
+body h1.title, body .part, body .chapter {
+  text-align: center;
+  padding: .25rem 0;
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  color: #8e673b; 
+}
+
+body h1.title {
+  font-size: 1.75rem;
+}
+
+body .part {
+  font-size: 1.62rem;
+  margin: 2rem 0 1rem 0;
+}
+
+body .part.part-number {
+  font-size: 1.45rem;
+  margin: 2rem 0 0 0;
+}
+
+body .part + .part {
+  margin: 0;
+}
+
+body .chapter {
+  font-size: 1.45rem;
+  margin: 2rem 0 1rem 0;
+}
+
+body .th1, body .th2, body .th3, body .th4, body .th5, body .th6 {
+  display: block;
+  margin: 1.5rem 0 0 0;
+  padding: .25rem 0 .25rem 0;
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  color: #6f6448;
+}
+
+body .th1 {
+  margin: 1rem 0 0 0;
+  font-size: 1.4rem;
+}
+
+body .th2 {
+  font-size: 1.20rem;
+}
+
+body .th1 + .th2 {
+  margin: .2rem 0 0 0;
+}
+
+body .th3 {
+  font-size: 1.08rem;
+}
+
+body .th2 + .th3 {
+  margin: .2rem 0 0 0;
+}
+
+body .th4 {
+  font-size: .96rem;
+}
+
+body .th3 + .th4 {
+  margin: .2rem 0 0 0;
+}
+
+body .th5 {
+  font-size: .92rem;
+}
+
+body .th4 + .th5 {
+  margin: .3rem 0 0 0;
+}
+
+body .th6 {
+  font-size: .80rem;
+}
+
+body .th5 + .th6 {
+  margin: .3rem 0 0 0;
+}
+
+body p {
+  padding: .1rem 0 .2rem 0;
+  line-height: 1.4rem;
+  margin: 0;
+}
+
+body p.text {
+  padding: .1rem 0 .1rem 0;
+  text-indent: 1.5rem;
+  text-align: justify;
+}
+
+body p.author {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+body p.genre {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+body a {
+  color: #0a6370;
+  -webkit-text-decoration-color: #8ed2cf;
+          text-decoration-color: #8ed2cf;
+}
+
+body a:hover {
+  color: #004f53;
+  -webkit-text-decoration-color: #004f53;
+          text-decoration-color: #004f53;
+}
+
+body ins {
+  -webkit-text-decoration-style: double;
+          text-decoration-style: double;
+}
+
+body dt {
+  display: inline;
+  font-weight: 600;
+  font-size: 1.075rem;
+}
+
+body dd {
+  display: inline;
+  margin: 0;
+  font-size: 1.075rem;
+}
+
+body dfn {
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+}
+
+body sup a {
+  padding: 0 .2rem 0 .1rem;
+  margin: 0 -.2rem 0 -.1rem;
+  text-decoration: none;
+}
+
+body sup a:hover {
+  text-decoration: underline;
+}
+
+body .footnotes hr.ftn {
+  width: 35vw;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+body .footnotes sup a {
+  padding-right: .5rem;
+  text-decoration: none;
+}
+
+body .footnotes sup a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+font-face {
+  font-family: "PT-Serif";
+  src: local("PT-Serif"), url("/font/PT-Serif/pt-serif_regular.woff2");
+}
+
+page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}

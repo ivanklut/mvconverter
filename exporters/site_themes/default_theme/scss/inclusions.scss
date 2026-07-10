@@ -1,0 +1,257 @@
+@import "variables";
+
+
+
+
+@mixin incl-width {
+	width: clamp(320px, 88%, 94vw);
+}
+@mixin incl-padding {
+	padding: .5rem 1rem;
+}
+
+code {
+	display: inline-block;
+	font-family: $f-fam-mono;
+	font-size: .95rem;
+	background-color: $code-bg;
+	border: 1px solid $code-br;
+	border-radius: $round;
+	padding: 0 .2rem;
+
+	&.pre {
+		white-space: pre-wrap;
+	}
+}
+
+figure {
+	margin: 1rem auto 1rem auto;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+
+	figcaption {
+		font-weight: 600;
+		font-size: .85rem;
+		text-align: center;
+		padding: .25rem;
+		color: $c-f-heading;
+		p.small {
+			font-weight: 400;
+			text-align: start;
+		}
+	}
+
+	// Текстовые включения
+	&.text {
+		text {
+			font-size: .95rem;
+
+			h1 {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	&.norm {
+		@include incl-width();
+	}
+
+	&.advise {
+		@include incl-width();
+		@include incl-padding();
+		background-color: $advise-bg;
+		border: 2px solid $advise-br;
+		border-radius: .3rem;
+	}
+
+	&.warning {
+		@include incl-width();
+		@include incl-padding();
+		background-color: $warning-bg;
+		border: 2px solid $warning-br;
+		border-radius: .3rem;
+	}
+
+	&.danger {
+		@include incl-width();
+		@include incl-padding();
+		background-color: $danger-bg;
+		border: 2px solid $danger-br;
+		border-radius: .3rem;
+	}
+
+	&.note {
+		@include incl-width();
+		@include incl-padding();
+		background-color: $note-bg;
+		border: 2px solid $note-br;
+		border-radius: .3rem;
+
+		text {
+			font-size: .8rem;
+		}
+	}
+
+	&.poem {
+		@include incl-width();
+		@include incl-padding();
+		text {
+			align-self: center;
+
+			p.date {
+				font-size: .85rem;
+			}
+
+			stanza {
+				display: block;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	&.quote {
+		@include incl-width();
+		@include incl-padding();
+		background-color: #fdfcfb;
+		border-radius: $round;
+		&.epigraph {
+			background-color: transparent;
+			width: 60%;
+			margin-right: 0;
+		}
+		blockquote {
+			margin: 0;
+			.text-quote {
+				font-family: $f-fam-quote;
+				font-size: .9rem;
+			}
+			.author {
+				text-align: end;
+				font-size: .9rem;
+			}
+		}
+
+		figcaption {
+
+			margin-top: -.2rem;
+
+			p {
+				padding: 0;
+			}
+		}
+	}
+
+
+	// Преформатированный текст
+
+	&.pre {
+		pre {
+			display: block;
+			width: clamp(320px, calc(88% - .8rem), 94vw);
+			padding: .5rem .4rem;
+			margin: 0 auto 0 auto;
+			font-family: $f-fam-mono;
+			font-size: .95rem;
+			white-space: pre-wrap;
+			background-color: $pre-bg;
+			border: 1px solid $pre-br;
+			border-radius: $round;
+		}
+	}
+
+	// Программный код
+	&.code {
+		code {
+			width: clamp(320px, calc(88% - .8rem), 94vw);
+			padding: .5rem .4rem;
+			margin: 0 auto 0 auto;
+			font-family: $f-fam-mono;
+			font-size: .95rem;
+			background-color: $code-bg;
+			border: 1px solid $code-br;
+			border-radius: $round;
+			white-space: pre-wrap;
+		}
+	}
+
+	// Формулы
+	&.formula {
+		.asc,
+		.tex {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	// Общее для всех медиа-включений
+	&.media {
+		width: 100%;
+		max-width: fit-content;
+		padding: 1rem;
+		border-radius: $round;
+		background-color: $inclusion-bg;
+	}
+	// Изображения
+	&.img {
+		img {
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 55vh;
+			align-self: center;
+		}
+		figcaption {
+			padding-bottom: 0;
+		}
+	}
+
+	&.audio {
+		display: flex;
+		flex-direction: row;
+		column-gap: 1rem;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 0 .5rem;
+		margin: 0;
+		border-radius: $round;
+		background-color: $inclusion-bg;
+		figcaption {
+ 			p {
+				padding: 0;
+			}
+		}
+	}
+
+	&.video {
+
+	}
+
+	&.frame {
+
+		iframe {
+			width: 980px;
+			height: 551px;
+			max-width: 100%;
+			max-height: fit-content;
+
+		}
+		//width: auto;
+		//max-width: 100%;
+		//height: auto;
+		//max-height: 55vh;
+	}
+}
+
+pre {
+    display: block;
+    width: clamp(320px, calc(88% - .8rem), 94vw);
+    padding: .5rem .4rem;
+    margin: 0 auto 0 auto;
+    font-family: $f-fam-mono;
+    font-size: .95rem;
+    white-space: pre-wrap;
+    background-color: $pre-bg;
+    border: 1px solid $pre-br;
+    border-radius: $round;
+}

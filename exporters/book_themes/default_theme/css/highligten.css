@@ -1,0 +1,110 @@
+/* =====================================================================
+   РОДНАЯ ТЕМА ПОДСВЕТКИ MARKVAN (ПЕРЕНОС ИЗ VS CODE TOKEN CUSTOMIZATIONS)
+   ===================================================================== */
+
+/* Общий блок кода для разметки Маркван */
+pre code.language-text {
+	display: block;
+	background-color: #1e1e1e; /* Глубокий темный фон редактора */
+	color: #D4D4D4;            /* Основной цвет текста */
+	font-family: 'Consolas', 'Courier New', monospace;
+	font-size: 14px;
+	line-height: 1.6;
+	padding: 15px;
+	border-radius: 6px;
+	overflow-x: auto;
+}
+
+/* mv.white.markvan */
+.mv-white-markvan {
+	color: #D4D4D4;
+}
+
+/* mv.faded.markvan, punctuation.definition.list.markvan */
+.mv-faded-markvan {
+	color: #949a8f; /* Сдержанный оливково-серый */
+}
+
+/* mv.bracket.l0 (Внешние скобки матрешек) */
+.mv-bracket-l0 {
+	color: #949a8f;
+}
+
+/* mv.bracket.l1 (Первый уровень вложенности) */
+.mv-bracket-l1 {
+	color: #9cb984; /* Мягкий зеленый */
+}
+
+/* mv.bracket.l2 (Глубокий уровень вложенности) */
+.mv-bracket-l2 {
+	color: #aede86; /* Салатовый акцент */
+}
+
+/* mv.text.l0 */
+.mv-text-l0 {
+	color: #9c9076; /* Приглушенный песочный */
+}
+
+/* mv.text.l1 */
+.mv-text-l1 {
+	color: #bdad8a; /* Светло-песочный */
+}
+
+/* mv.text.l2 */
+.mv-text-l2 {
+	color: #d6c092; /* Яркий кремовый */
+}
+
+
+
+/* mv.bracket.l3 (Четвертый, самый глубокий уровень вложенности скобок) */
+.mv-bracket-l3 {
+	color: #d2fba4; /* Еще более яркий, светлый салатово-зеленый акцент */
+}
+
+/* mv.text.l3 (Четвертый уровень вложенности текста прозы) */
+.mv-text-l3 {
+	color: #ecdca5; /* Насыщенный золотисто-кремовый цвет */
+}
+
+
+/* mv.text.embedding (Блочные включения {{ ... }}) */
+.mv-text-embedding {
+	color: #9e779e; /* Глубокий лиловый */
+}
+
+/* mv.header.bold.markvan */
+.mv-header-bold-markvan {
+	color: #bbcaa4;
+	font-weight: bold;
+}
+
+/* mv.header.normal.markvan */
+.mv-header-normal-markvan {
+	color: #bbcaa4;
+	font-weight: normal;
+}
+
+/* markup.list.markvan (Маркеры списков) */
+.markup-list-markvan {
+	color: #9cb984;
+}
+
+/* comment.line.markvan, comment.block.markvan (Комментарии) */
+.comment-line-markvan,
+.comment-block-markvan {
+	color: #666666; /* Строгий темно-серый */
+	font-style: italic;
+}
+
+/* keyword.control.markvan, markup.underline.link.markvan (Ссылки) */
+.markup-underline-link-markvan {
+	color: #8da1b7; /* Красивый серо-голубой */
+	text-decoration: underline;
+}
+
+/* entity.name.markvan.footnote (Сноски) */
+.entity-name-markvan-footnote,
+.mv-footnote {
+	color: #7b8c9e; /* Стальной голубой */
+}

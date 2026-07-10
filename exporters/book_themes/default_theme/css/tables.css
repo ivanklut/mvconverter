@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "PT-Serif";
+  src: local("PT-Serif"), url("/font/PT-Serif/pt-serif_regular.woff2");
+}
+
+figure.table {
+  border-radius: 0.3rem;
+}
+
+table, th, td {
+  border: 2px solid #eeeeea;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fdfcfb;
+  border-radius: 0.66rem;
+}
+
+table th, table td {
+  padding: .2rem .4rem;
+}
+
+table th.end, table td.end {
+  text-align: end;
+}
+
+table th {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+}
+
+table td {
+  vertical-align: top;
+  text-align: start;
+}
+
+table td.num {
+  text-align: end;
+}
+
+table tbody tr:hover {
+  background-color: #dbebd8;
+}
+
+table tfoot {
+  font-weight: bold;
+}
+
+col.warning {
+  background-color: #fbf3db;
+}

@@ -1,0 +1,122 @@
+^^^
+Краткая справка переводов сущностей Маркван
+
+///Быстрый поиск: русское название → английское название
+///Используется в кодовой базе для названий классов, переменных, функций
+
+===
+Структурные блоки
+
+[( Таблица соответствия
+title          — Название произведения
+part                    — Часть
+chapter                 — Глава
+heading_1               — Заголовок 1-го уровня
+heading_2               — Заголовок 2-го уровня
+heading_3               — Заголовок 3-го уровня
+heading_4               — Заголовок 4-го уровня
+heading_5               — Заголовок 5-го уровня
+heading_6               — Заголовок 6-го уровня
+pause_header            — Заголовок-пауза / Визуальный разделитель
+paragraph               — Абзац
+context_pair            — Контекстная пара
+list_item               — Элемент списка
+bullet_list             — Маркированный список
+numbered_list           — Нумерованный список
+list_nesting            — Вложенность списков
+inline_comment          — Строчный комментарий
+block_comment           — Блочный комментарий
+)]
+
+===
+Встроенное форматирование
+
+italic                  — Курсив
+bold                    — Полужирный
+small                   — Мелкий текст
+large                   — Крупный текст
+superscript             — Надстрочный
+subscript               — Подстрочный
+monospace               — Моноширинный / Преформатированный
+foreign                 — Иностранное слово
+term                    — Термин / Определение
+term_reference          — Упоминание термина
+deleted                 — Удалено
+added                   — Добавлено
+
+===
+Ссылки и сноски
+
+link_text               — Тело ссылки
+internal_link           — Локальная ссылка / Путь
+external_link           — Внешняя ссылка / URL
+inline_link             — Строчное оформление ссылки
+link_description        — Описание ссылки
+footnote_mark           — Метка сноски
+footnote_content        — Тело сноски
+symbol_footnote         — Символьная сноска
+numeric_footnote        — Цифровая сноска
+
+===
+Включения
+
+embed_text              — Универсальный текстовый блок
+embed_comment           — Комментарий блок
+embed_preformatted      — Преформатированный текст
+embed_code              — Программный код
+embed_formula           — Формула
+embed_table             — Таблица
+embed_media             — Медиа / Рисунок
+embed_grouping          — Группирующее включение
+embed_spoiler           — Спойлер / Скрытие
+embed_interactive       — Интерактивное поле ввода
+embed_inline_code       — Строчный код
+embed_inline_formula    — Строчная формула
+embed_inline_interactive — Интерактивное поле ввода (строковые)
+embed_class             — Класс включения
+embed_id                — Идентификатор включения
+embed_title             — Заголовок включения
+embed_description       — Описание включения
+
+===
+Документ и метаданные
+
+document                — Документ
+document_content        — Содержание документа
+hierarchy               — Иерархия
+section                 — Секция
+header_id               — Идентификатор заголовка
+local_metadata          — Локальные метаданные
+global_metadata         — Глобальные метаданные
+metadata_priority       — Приоритет метаданных
+
+===
+Системный слой
+
+embed_variable          — Встраивание переменной
+embed_block             — Встраивание блока
+embed_file              — Встраивание файла
+init_file               — Файл инициализации
+metadata_file           — Файл метаданных проекта
+custom_class            — Пользовательский класс
+handler_plugin          — Плагин обработчик
+
+===
+Абстрактная синтаксическая модель
+
+node_type               — Тип узла
+node_content            — Содержимое узла
+node_attributes         — Атрибуты узла
+plain_text              — Простой текст
+formatted_text          — Форматированный текст
+inline_element          — Inline-элемент
+
+===
+Правила обработки
+
+block_detection         — Определение блока по маркеру
+nesting_control         — Nesting контроль
+inline_parsing          — Встроенный парсинг
+link_order              — Порядок ссылок
+syntax_validation       — Синтаксическая корректность
+semantic_validation     — Семантическая корректность

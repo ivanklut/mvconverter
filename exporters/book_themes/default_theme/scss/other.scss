@@ -1,0 +1,128 @@
+@import "variables";
+
+// Пьеса
+.piece-compact {
+	.characters {
+		text-align: center;
+		font-size: .9rem;
+		font-style: italic;
+	}
+	.replica {
+		padding-bottom: .5rem;
+		width: clamp(300px, 50rem, 100vw);
+		margin: 0 auto;
+		.character {
+			display: inline;
+			min-width: 10rem;
+		}
+		div {
+			display: inline;
+			.remark {
+				display: inline;
+				font-size: .9rem;
+				font-style: italic;	
+			}
+			p {
+				display: inline;
+			}
+		}
+	}
+}
+
+
+
+.piece-column {
+	.characters {
+		text-align: center;
+		font-size: .9rem;
+		font-style: italic;
+	}
+	.replica {
+		display: flex;
+		column-gap: .5rem;
+		.character {
+			display: inline;
+			min-width: 10rem;
+		}
+		div {
+			display: inline;
+			.remark {
+				display: inline;
+				font-size: .9rem;
+				font-style: italic;	
+			}
+			p {
+				display: inline;
+			}
+		}
+	}
+}
+
+
+.piece {
+	.scene-heading {
+
+	}
+	.scene-action {
+		margin-top: 1rem;
+	}
+	.characters {
+		text-align: center;
+		font-size: .9rem;
+		font-style: italic;
+	}
+	.character {
+		margin-top: 1rem;
+		text-align: center;
+	}
+	.remark {
+		text-align: center;
+		font-size: .9rem;
+		font-style: italic;
+
+	}
+	.replica {
+		margin-left: 6rem;
+		margin-right: 6rem;
+	}
+	.titer {
+		margin-top: 1rem;
+		.titer-content {
+			margin-left: 9rem;
+		}
+	}
+}
+// Сценарий
+.screenplay {
+.scene-heading, .scene-action, .character, .replica, .remark, .titer, .characters {
+font-family: $f-fam-mono;
+}
+.scene-heading {
+	padding: .2rem;
+	margin-top: 1rem;
+	font-weight: 600;
+}
+.scene-action {
+	margin-top: 1rem;
+}
+.characters {
+	margin-left: 12rem;
+}
+.character {
+	margin-top: 1rem;
+	margin-left: 6rem;
+}
+.remark {
+	margin-left: 3rem;
+}
+.replica {
+	margin-left: 6rem;
+	margin-right: 6rem;
+}
+.titer {
+	margin-top: 1rem;
+	.titer-content {
+		margin-left: 9rem;
+	}
+}
+}

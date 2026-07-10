@@ -1,0 +1,63 @@
+@import "variables";
+
+// Tables
+// ------
+figure.table {
+	//text-align: center;
+  //display: inline-block;
+  //background-color: #fff;
+  //padding: 2rem 2rem;
+  //color: #000;
+//overflow-y: auto;	
+ 	//padding: 1rem;
+	border-radius: $round;
+	//background-color: $table-bg;
+} 
+table, th, td {
+	border: 2px solid $table-br;
+	
+}
+table {
+	width: 100%;
+	//table-layout: fixed;
+	border-collapse: collapse;
+	background-color: $table-bg;
+	border-radius: $round*2.2;
+
+
+	th, td {
+		padding: .2rem .4rem;
+		&.end {
+			text-align: end;
+		}
+	}
+	th {
+		text-align: center;
+		font-style:italic;
+		font-weight:normal;
+
+	}
+	td {
+		vertical-align: top;
+		text-align: start;
+		&.num{
+			text-align: end;
+		}
+	}
+	tbody {
+		tr:hover{
+			background-color: $table-hover;
+		}
+	}
+	tfoot {
+		font-weight: bold;
+		td {
+			//text-align: end;
+		}
+	}
+
+}
+col.warning {
+	background-color: $table-attention;
+
+}

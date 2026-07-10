@@ -1,0 +1,142 @@
+font-face {
+  font-family: "PT-Serif";
+  src: local("PT-Serif"), url("/font/PT-Serif/pt-serif_regular.woff2");
+}
+
+.piece-compact .characters {
+  text-align: center;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece-compact .replica {
+  padding-bottom: .5rem;
+  width: clamp(300px, 50rem, 100vw);
+  margin: 0 auto;
+}
+
+.piece-compact .replica .character {
+  display: inline;
+  min-width: 10rem;
+}
+
+.piece-compact .replica div {
+  display: inline;
+}
+
+.piece-compact .replica div .remark {
+  display: inline;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece-compact .replica div p {
+  display: inline;
+}
+
+.piece-column .characters {
+  text-align: center;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece-column .replica {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: .5rem;
+          column-gap: .5rem;
+}
+
+.piece-column .replica .character {
+  display: inline;
+  min-width: 10rem;
+}
+
+.piece-column .replica div {
+  display: inline;
+}
+
+.piece-column .replica div .remark {
+  display: inline;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece-column .replica div p {
+  display: inline;
+}
+
+.piece .scene-action {
+  margin-top: 1rem;
+}
+
+.piece .characters {
+  text-align: center;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece .character {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.piece .remark {
+  text-align: center;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.piece .replica {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.piece .titer {
+  margin-top: 1rem;
+}
+
+.piece .titer .titer-content {
+  margin-left: 9rem;
+}
+
+.screenplay .scene-heading, .screenplay .scene-action, .screenplay .character, .screenplay .replica, .screenplay .remark, .screenplay .titer, .screenplay .characters {
+  font-family: "Cousine", monospace;
+}
+
+.screenplay .scene-heading {
+  padding: .2rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.screenplay .scene-action {
+  margin-top: 1rem;
+}
+
+.screenplay .characters {
+  margin-left: 12rem;
+}
+
+.screenplay .character {
+  margin-top: 1rem;
+  margin-left: 6rem;
+}
+
+.screenplay .remark {
+  margin-left: 3rem;
+}
+
+.screenplay .replica {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.screenplay .titer {
+  margin-top: 1rem;
+}
+
+.screenplay .titer .titer-content {
+  margin-left: 9rem;
+}

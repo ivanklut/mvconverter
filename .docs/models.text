@@ -1,0 +1,125 @@
+***
+Объекты маркван-разметки
+
+Это примерно, актуальное см. код
+
+===
+Классы документа
+
+Document — Документ (Верхний контейнер)
+	- metadata: Словарь UNO-переменных проекта (из meta.uno и ###)
+	- title: Объект Title (Данные из блока *** в самом начале)
+	- body: Section(level=0) — Нулевая секция, корень всего контента
+
+Title — Титульный блок документа
+	- name: Название произведения
+	- author: Автор
+	- year: Год написания (считывается, но текст остается в теле)
+	- details: Дополнительные строки (переводчик, жанр и т.д.)
+
+Node — Базовый класс для любого блочного элемента структуры в теле (body)	
+	- EndSection(Node) — Линейный маркер безусловного конца раздела (___)	
+	- Heading(Node) — Структурирующий заголовок (ранг: part, chapter, header...)	
+	- Paragraph(Node) — Обычный текстовый абзац
+		- properties: spans (список объектов InlineElement)
+		- attachments: список объектов Attachment (ссылки/сноски под абзацем)		
+	- ListBlock(Node) — Контейнер для группы элементов списка
+		- properties: rank (тип: '-', '-1.', '-#.'), level (отступ табами)
+		- items: список объектов ListItem		
+		- ListItem(Node) — Одиночный элемент списка
+			- nodes: список нод контента (Paragraph или ContextPair)
+			- attachments: список объектов Attachment (ссылки/сноски под пунктом)			
+	- ContextPair(Node) — Семантическая контекстная пара (Предикат + Зависимый)
+		- predicate_node: Нода-предикат (Всегда одиночный Paragraph)
+		- dependent_node: Зависимая нода (Paragraph, ListBlock или Inclusion)		
+	- Attachment(Node) — Универсальное прикрепление (пишется под абзацем или списком)
+		- properties: type ('link_local', 'link_global', 'footnote')
+		- target: Строка адреса URL или чистый текст сноски		
+	- Inclusion(Node) — Семейство симметричных скобочных блоков [X … X]
+		- properties: id, incl_class, title
+		- TextIncl(Inclusion)       ➔ [( … )] Текстовая матрёшка
+		- CommentIncl(Inclusion)    ➔ [/ … /] Блочный комментарий
+		- PreIncl(Inclusion)        ➔ [= … =] Преформатированный текст
+		- CodeIncl(Inclusion)       ➔ [& … &] Блок кода (включая ноты)
+		- FormulaIncl(Inclusion)    ➔ [% … %] Блок математических формул
+		- MediaIncl(Inclusion)      ➔ [[ … ]] Картинки, видео, аудио
+		- GroupingIncl(Inclusion)   ➔ [. … .] Группирующий контейнер (сетка)
+		- SpoilerIncl(Inclusion)    ➔ [_ … _] Скрывающий спойлер
+		- InputIncl(Inclusion)      ➔ [$ … $] Блок интерактивного ввода
+		- Table(Inclusion)          ➔ [| … |] Информационная таблица
+			- rows: список внутренних объектов TableRow
+			- TableRow (Элемент строки, содержит ячейки TableCell)
+			- TableCell (Элемент ячейки, содержит внутри себя список InlineElement)			
+	- EmbedBlock(Node) — Контейнер динамического системного встраивания {{ ... }}
+		- RawCodeBlock — Прямая инъекция сырого технического кода
+		- ExternalImportNode — Инструкция внешнего модульного импорта нод/файлов		
+	- TableOfContents(Node) — Сгенерированное Агрегатором оглавление секции
+	- GlossaryBlock(Node) — Сгенерированный Агрегатором список терминов секции
+
+Section — Структурный Раздел (Элемент управления деревом документа)
+	- level: Текущий ранг вложенности (0, 'part', 'chapter', 'header'...)
+	- heading_node: Ссылка на объект Heading, который открыл этот раздел
+	- nodes: Список дочерних Блоков (Paragraph, ListBlock, Inclusion, ContextPair...)
+	- sub_sections: Список вложенных Разделов Section более низкого ранга
+	- parent: Ссылка на родительский Раздел Section (для подъёма вверх по стеку)
+
+InlineElement — Базовый класс для любых строчных элементов (внутри абзацев и ячеек)
+	- TextSpan(InlineElement) — Голый кусок строки без оформления
+	- StyledSpan(InlineElement) — Контейнер стилей (жирный, курсив, мелкий, маркер)
+		- properties: style_type, children (список других InlineElement)
+	- LinkSpan(InlineElement) — Внутристрочная гиперссылка или файл (<[ссылка]>)
+	- VariableSpan(InlineElement) — Внутристрочная UNO-переменная ({{ключ}})
+
+Aggregator — Агрегатор (Результаты работы процессов агрегации)
+	- TableOfContents(Node): — Оглавление
+	- GlossaryBlock(Node): — Глоссарий терминов
+	- SpoilerCollectionBlock(Node): — Точка сбора вынесенных спойлеров
+	- FootnotesCollectionBlock(Node): — Единая точка сбора глобальных сносок всей книги
+
+
+===
+Иерархия классов
+
+Document: — Документ
+- Metadata —  Метаданные
+- Title — Титул /// Метаданные зашифрованные в титульной информации: переводчик, автор, название, жанр + год из последней строки не вырезая.
+- Section: — Раздел /// Нулевая секция — тело документа.
+	- Node: — Нода
+		- Heading(Node): — Структурирующий аголовок
+		- Paragraph(Node): — Абзац
+			- InlineElement:
+				- TextSpan(InlineElement): — Просто текст
+				- StyledSpan(InlineElement)): — Стилизованный текст
+				- LinkSpan(InlineElement): — Ссылка
+				- InlineIncl(InlineElement): — Строчное включение
+				- VariableSpan(InlineElement): — Переменная
+		- ListBlock(Node): — Блок списка 
+			- ListItem(Node): — Элемент списка
+		- ContextPair(Node): — Контекстная пара
+			///- Predicate(Node) —  Предикат
+			///- DependentElement(Node) — Зависимый элемент /// Paragraph, List, Inclusion
+		- Attachment(Node): — Сноски и ссылки 
+		- Inclusion(Node): — Включение
+			- TextIncl(Inclusion): — Текстовое включение 
+			- CommentIncl(Inclusion): — Блочный комментарий 
+			- PreIncl(Inclusion): — Преформатированный текст
+			- CodeIncl(Inclusion): — Блок кода
+			- FormulaIncl(Inclusion): —  Блок формул
+			- MediaIncl(Inclusion): —  Медиавключение
+			- Table(Inclusion): —  Таблица
+				- class TableRow: — Строка
+				- class TableCell: — Ячейка в строке
+			- GroupingIncl(Inclusion): — Группирующее включение
+			- SpoilerIncl(Inclusion): —  Скрывающее включение
+			- InputIncl(Inclusion): —  Блок ввода		
+		- EmbedBlock(Node) — Контейнер встраивания
+			- RawCodeBlock — Блок сырого кода
+			- ExternalImportNode — Внешний импорт
+		- Aggregator — Агрегатор (Результаты работы процессов агрегации)
+			- TableOfContents(Node): — Оглавление
+			- GlossaryBlock(Node): — Глоссарий терминов
+			- SpoilerCollectionBlock(Node): — Точка сбора вынесенных спойлеров
+			- FootnotesCollectionBlock(Node): — Собрание сносок
+		- EndSection(Node) — Конец раздела
+
+

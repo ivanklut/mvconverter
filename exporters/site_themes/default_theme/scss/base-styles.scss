@@ -1,0 +1,175 @@
+@import "variables";
+
+html { 
+	// Эта формула меняет размер шрифта по умолчанию в зависимости от ширины экрана. Соответственно, фактические rem и em тоже претерпевают изменения.
+	// font-size: calc( Fmin + (Fmax - Fmin) * (100vw - Vmin)/(Vmax - Vmin) );
+	font-size: calc(16px + (30 - 16) * (100vw - 320px)/(3840 - 320));  
+}
+body {
+	margin:0;	
+	main {
+	width: clamp(200px, 46rem, 94vw);
+	margin: 0 auto 0 auto;
+	}	
+	padding: .5rem 3vw;
+	background-color: $c-b-body;
+	color: $c-f-body;
+	font-family: $f-fam-body;
+	tab-size: 3;
+
+
+	// Заголовки
+	h1.title, .part, .chapter {
+		text-align: center;
+
+		padding: .25rem 0;
+		font-family: $f-fam-heading;
+		font-weight: 600;
+		color: $c-f-heading;
+	}
+	h1.title {
+		font-size: 1.75rem;
+	}
+	.part {
+		font-size: 1.62rem;
+		margin: 2rem 0 1rem 0;
+		&.part-number {
+			font-size: 1.45rem;
+			margin: 2rem 0 0 0;
+		}
+	}
+	.part + .part {
+		margin: 0;
+	}
+	
+	.chapter {
+		font-size: 1.45rem;
+		margin: 2rem 0 1rem 0;
+	}
+	.th1, .th2, .th3, .th4, .th5, .th6 {
+		display: block;
+		margin: 1.5rem 0 0 0;
+		padding: .25rem 0 .25rem 0;
+		font-family: $f-fam-heading;
+		font-weight: 600;
+		color: $c-f-heading;
+	}
+	.th1 {
+		margin: 1rem 0 0 0;
+		font-size: 1.4rem;
+	}
+	.th2 {
+		font-size: 1.20rem;
+	}
+	.th1 + .th2 {
+		margin: .2rem 0 0 0;
+	}
+	.th3 {
+		font-size: 1.08rem;
+	}
+	.th2 + .th3 {
+		margin: .2rem 0 0 0;
+	}
+	.th4 {
+		font-size: .96rem;
+	}
+	.th3 + .th4 {
+		margin: .2rem 0 0 0;
+	}
+	.th5 {
+		font-size: .92rem;
+	}
+	.th4 + .th5 {
+		margin: .3rem 0 0 0;
+	}
+	.th6 {
+		font-size: .80rem;
+	}
+	.th5 + .th6 {
+		margin: .3rem 0 0 0;
+	}
+
+	p {
+		padding: .1rem 0 .2rem 0; 
+		line-height: 1.4rem;
+		margin:0;
+		&.text {
+			padding: .1rem 0 .1rem 0;
+			text-indent: 1.5rem;
+			text-align: justify;
+		}
+
+		&.author {
+			text-align: center;
+			font-size: 1.25rem;
+		}
+		&.genre {
+			text-align: center;
+			font-size: 1.25rem;
+		}
+	}
+
+	a {
+		color: #0a6370;
+		text-decoration-color: #8ed2cf;
+		&:hover {
+			color: #004f53;
+			text-decoration-color: #004f53;
+		}
+	}
+
+	ins {
+		text-decoration-style: double;
+	}
+	dt {
+		display: inline;
+		font-weight: 600;
+		font-size: 1.075rem;
+	 }
+	dd {
+		display: inline;
+		margin: 0;
+		font-size: 1.075rem;
+	}
+	dfn {
+		text-decoration-style: dotted;
+		text-decoration-line: underline;
+		text-decoration-thickness: from-font;
+		
+	}
+		// Сноски
+		sup {
+			a {
+				padding: 0 .2rem 0 .1rem;
+				margin: 0 -.2rem 0 -.1rem;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.footnotes {
+			hr.ftn {
+				width: 35vw;
+				margin-right: auto;
+				margin-left: 0;
+			}
+			sup {
+	
+				a {
+					padding-right: .5rem;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+}
+
+
+
+
+
+
+

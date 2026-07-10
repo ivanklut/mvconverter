@@ -1,0 +1,4 @@
+font-face {
+  font-family: "PT-Serif";
+  src: local("PT-Serif"), url("/font/PT-Serif/pt-serif_regular.woff2");
+}

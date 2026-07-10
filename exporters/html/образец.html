@@ -1,0 +1,49 @@
+<figure class="image single">
+    <figcaption>
+        <incl-title>Способы соединения мауэрлата</incl-title>
+        <incl-descr>а) Уголок; б) Болты; в) Стропило;</incl-descr>
+    </figcaption>
+    <incl-body>
+        <!-- Ссылка-обертка для лайтбокса -->
+        <a href="img/mauerlat~flscreen.webp" 
+           class="media-zoom"
+		   data-source="img/mauerlat.png">
+            
+            <!-- Основная картинка для просмотра -->
+            <img src="img/mauerlat~view.webp" 
+                 class="orientation-horizontal" 
+                 style="aspect-ratio: 1.45;" 
+                 loading="lazy" 
+                 alt="Способы соединения мауэрлата">
+        </a>
+    </incl-body>
+</figure>
+
+<figure class="image gallery">
+    <figcaption>
+        <incl-title>Этапы монтажа стропильной системы</incl-title>
+        <incl-descr>Фотоотчет с объекта в Подмосковье</incl-descr>
+    </figcaption>
+    
+    <!-- Контейнер сетки галереи (в SCSS сделаем через Grid) -->
+    <incl-body>
+        
+        <!-- Картинка 1 -->
+        <a href="img/stage1~flscreen.webp" class="media-zoom">
+            <img src="img/stage1~thumb.webp" style="aspect-ratio: 1;" loading="lazy" alt="Этап 1">
+        </a>
+        
+        <!-- Картинка 2 -->
+        <a href="img/stage2~flscreen.webp" class="media-zoom">
+            <img src="img/stage2~thumb.webp" style="aspect-ratio: 1;" loading="lazy" alt="Этап 2">
+        </a>
+
+    </incl-body>
+</figure>
+
+Привет. Необходимо создать модуль расширяющий логику копирования медиафайлов. А именно: создавать пресеты изображений. Идея в том, чтобы :по создавать более лёгкие файлы с маркерами их предназначения.
+- img2.png — Исходник автора.
+- img2~view.webp — Основное отображение в теле документа.
+- img2~thumb.webp — Миниатюра для галереи из нескольких штук.
+- img2~flscreen.webp — Полноэкранный лайтбокс.
+Логику сжатия нужно продумать исходя из того, какие возможности нам дадут питоновские модули.
